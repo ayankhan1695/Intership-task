@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT Internship Tasks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* CSS for vertical navigation */
+        .vertical-nav {
+            width: 200px;
+            position: fixed;
+            height: 100%;
+            background-color: #333;
+            padding-top: 20px;
+            left: 0; /* Always on the left */
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%); /* Initially hidden */
+        }
+        .vertical-nav a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .vertical-nav a:hover {
+            background-color: #575757;
+        }
+        .show-nav {
+            transform: translateX(0); /* Show the nav when toggled */
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .main-content {
+            margin-left: 10px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+        .shift-content {
+            margin-left: 210px; /* Adjust content when menu opens */
+        }
+    </style>
+</head>
+<body>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleNav()">☰ Menu</button>
+
+    <!-- Vertical Navigation -->
+    <div class="vertical-nav" id="sideNav">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <div class="container mt-4">
+            <h1>Welcome to VIT Internship Tasks</h1>
+            <p>This site contains the HTML, CSS, and Bootstrap tasks.</p>
+
+            <!-- Bootstrap Table -->
+            <h3 class="mt-4">User Information</h3>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>1234567890</td>
+                        <td>123 Street, City</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>janesmith@example.com</td>
+                        <td>0987654321</td>
+                        <td>456 Avenue, City</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Bootstrap Form -->
+            <h3 class="mt-4">Registration Form</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">Contact</label>
+                    <input type="text" class="form-control" id="contact" placeholder="Enter your contact">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" placeholder="Enter your address"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("sideNav");
+            var content = document.getElementById("mainContent");
+
+            nav.classList.toggle("show-nav");
+            content.classList.toggle("shift-content");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
